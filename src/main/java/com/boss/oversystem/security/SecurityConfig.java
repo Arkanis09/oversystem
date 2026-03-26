@@ -36,12 +36,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth
-                .antMatchers("/", "/css/**", "/js/**", "/img/**", "/fonts/**", "/login", "/register")
+                .antMatchers("/", "/css/**", "/js/**", "/img/**", "/fonts/**", "authentication/login",
+                        "/authentication/register")
                 .permitAll()
 
                 .anyRequest().authenticated())
                 .formLogin(form -> form
-                        .loginPage("/login")
+                        .loginPage("/authentication/login")
                         .defaultSuccessUrl("/dashboard", true)
                         .permitAll())
                 .logout(logout -> logout
