@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.boss.oversystem.entities.Recordatorio;
 
 @Repository
-public interface RecordatorioRepository extends JpaRepository<Recordatorio, Long> {
+public interface RecordatorioRepository extends JpaRepository<Recordatorio, Integer> {
 
 }

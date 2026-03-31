@@ -2,6 +2,7 @@ package com.boss.oversystem.entities;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "CATEGORIAS")
 public class Categorias {
@@ -9,16 +10,16 @@ public class Categorias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long Id;
+    private Integer Id;
 
     @Column(name = "NOMBRE")
     private String Nombre;
 
-    public Long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         Id = id;
     }
 

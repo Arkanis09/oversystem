@@ -16,7 +16,7 @@ public class CategoriaTareas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long Id;
+    private Integer Id;
 
     @ManyToOne
     @JoinColumn(name = "TAREAS_ID")
@@ -25,5 +25,31 @@ public class CategoriaTareas {
     @ManyToOne
     @JoinColumn(name = "CATEGORIAS_ID")
     private Categorias Categorias;
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
+    public Tareas getTareas() {
+        return Tareas;
+    }
+
+    public void setTareas(Tareas tareas) {
+        Tareas = tareas;
+    }
+
+    public Categorias getCategorias() {
+        return Categorias;
+    }
+
+    public void setCategorias(Categorias categorias) {
+        Categorias = categorias;
+    }
+
+
 
 }

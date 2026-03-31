@@ -10,30 +10,30 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
-    private Long Id;
+    private Integer Id;
 
     @NotBlank(message = "El nombre es obligatorio")
     @Column(name = "USERNAME", nullable = false, length = 100)
-    private String Username;
+    private String username;
 
     @NotBlank(message = "la contraseña es obligatoria")
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    public Long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         Id = id;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getPassword() {

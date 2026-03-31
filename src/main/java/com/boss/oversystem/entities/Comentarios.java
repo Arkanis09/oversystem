@@ -16,7 +16,7 @@ public class Comentarios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long Id;
+    private Integer Id;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
@@ -29,11 +29,11 @@ public class Comentarios {
     @Column(name = "DESCRIPCION")
     private String Descripcion;
 
-    public Long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         Id = id;
     }
 

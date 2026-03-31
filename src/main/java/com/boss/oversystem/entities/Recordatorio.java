@@ -19,7 +19,7 @@ public class Recordatorio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long Id;
+    private Integer Id;
 
     @JoinColumn(name = "TAREAS_ID")
     @ManyToOne
@@ -35,11 +35,11 @@ public class Recordatorio {
     @Column(name = "FECHA_FIN")
     private Date FechaFin;
 
-    public Long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         Id = id;
     }
 

@@ -12,7 +12,7 @@ public class Tareas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long Id;
+    private Integer Id;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
@@ -24,19 +24,19 @@ public class Tareas {
     @Column(name = "DESCRIPCION")
     private String Descripcion;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "STATUS")
-    private Status Status;
+ @Enumerated(EnumType.STRING)
+@Column(name = "STATUS", length = 20)
+private Status Status;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "PRIORIDAD")
-    private Prioridad Prioridad;
+@Enumerated(EnumType.STRING)
+@Column(name = "PRIORIDAD", length = 20)
+private Prioridad prioridad;
 
-    public Long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         Id = id;
     }
 
@@ -72,12 +72,6 @@ public class Tareas {
         Status = status;
     }
 
-    public Prioridad getPrioridad() {
-        return Prioridad;
-    }
 
-    public void setPrioridad(Prioridad prioridad) {
-        Prioridad = prioridad;
-    }
 
 }

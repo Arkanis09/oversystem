@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.boss.oversystem.entities.Categorias;
 
 @Repository
-public interface CategoriasRepository extends JpaRepository<Categorias, Long> {
+public interface CategoriasRepository extends JpaRepository<Categorias, Integer> {
 
 }

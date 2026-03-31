@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.boss.oversystem.entities.Tareas;
 
 @Repository
-public interface TareasRepository extends JpaRepository<Tareas, Long> {
+public interface TareasRepository extends JpaRepository<Tareas, Integer> {
 
 }
