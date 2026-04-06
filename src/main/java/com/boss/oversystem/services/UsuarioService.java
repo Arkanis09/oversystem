@@ -24,6 +24,9 @@ public class UsuarioService {
                     throw new IllegalArgumentException("Este nombre de usuario ya está en uso");
                 });
 
+        // para poder ponerle encriptado a la contraseña, es necesario sacarla cuando
+        // venga y después volver a ponerla
+        // encriptada llamando al método que encripta para que funcione
         user.setPassword(PEncoder.encode(user.getPassword()));
 
         return usuarioRepo.save(user);

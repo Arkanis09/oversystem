@@ -23,6 +23,9 @@ public class UsuarioDetailsService implements org.springframework.security.core.
 
         return User.withUsername(Usuario.getUsername())
                 .password(Usuario.getPassword())
+                .roles("USER")// detalle importante... si vas a hacer esto de usar spring security...
+                // tienes que poner obligatoriamente el rol.... sino te dará error al loguearte
+                // y los logs no te dirán mucho
                 .build();
     }
 

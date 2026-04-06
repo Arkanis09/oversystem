@@ -36,7 +36,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth
-                .antMatchers("/", "/css/**", "/js/**", "/img/**", "/fonts/**", "authentication/login",
+                .antMatchers("/", "/css/**", "/js/**", "/img/**", "/fonts/**", "/authentication/login",
                         "/authentication/register")
                 .permitAll()
 
@@ -47,7 +47,7 @@ public class SecurityConfig {
                         .permitAll())
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login?logout"))
+                        .logoutSuccessUrl("/authentication/login?logout"))
                 .csrf(csrf -> csrf
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()));
 
