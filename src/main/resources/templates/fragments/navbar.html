@@ -1,0 +1,32 @@
+<th:block th:fragment="navbar(title)" xmlns:th="http://www.thymeleaf.org">
+
+    <nav class="navbar navbar-dark bg-dark fixed-top custom-navbar">
+        <div class="container-fluid navbar-layout">
+
+            <div class="navbar-left">
+                <button type="button" class="hamburger" id="sidebarToggle" aria-label="Abrir menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="navbar-right">
+                <div class="navbar-user-box" th:title="${username}">
+                    <div class="navbar-user-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"></path>
+                        </svg>
+                    </div>
+
+                    <div class="navbar-user-info">
+                        <span class="navbar-user-label">Usuario</span>
+                        <strong class="navbar-user-name" th:text="${username}">Usuario</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</th:block>

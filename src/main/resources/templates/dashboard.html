@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <th:block th:replace="fragments/head :: headDashboard('Dashboard')"></th:block>
 </head>
 <body>
-    
 
-    <h1>HOLA MUNDO!</h1>
+    <th:block th:replace="fragments/navbar :: navbar('Dashboard')"></th:block>
+    <th:block th:replace="fragments/sidebar :: sidebar"></th:block>
+
+    <main class="main-content" id="mainContent">
+        <h1>HOLA <span th:text="${username}">Usuario</span></h1>
+    </main>
 
 </body>
 </html>
+<!--TODO EL APARTADO HTML/CSS/JS ESTÁ HECHO CON IA PARA AGILIZAR EL DISEÑO-->

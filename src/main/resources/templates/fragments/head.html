@@ -1,0 +1,34 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+
+ 
+  <th:block th:fragment="meta(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${title}">OverSystem</title>
+
+    <meta name="app-context" th:content="@{/}">
+  </th:block>
+
+  <th:block th:fragment="estilosNavbar">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+  </th:block>
+
+  <th:block th:fragment="estilosSidebar">
+<link rel="stylesheet" th:href="@{/css/sidebar.css}">
+  </th:block>
+
+    <th:block th:fragment="funcionamientosidebar">
+<script th:src="@{/js/sidebar.js}"></script>
+  </th:block>
+
+
+  <th:block th:fragment="headDashboard(title)">
+
+  <th:block th:replace="fragments/head :: meta(${title})"></th:block>
+<th:block th:replace="fragments/head ::estilosNavbar"></th:block>
+<th:block th:replace="fragments/head ::estilosSidebar"></th:block>
+ <th:block th:replace="fragments/head :: funcionamientosidebar"></th:block>
+  </th:block>
+
+</th:block>
