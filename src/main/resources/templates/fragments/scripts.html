@@ -1,0 +1,25 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+
+    <th:block th:fragment="jsContext">
+        <script th:src="@{/js/context-path.js}"></script>
+    </th:block>
+
+    <th:block th:fragment="jsSidebar">
+        <script th:src="@{/js/sidebar.js}"></script>
+    </th:block>
+
+    <th:block th:fragment="jsAuth">
+        <script th:src="@{/js/auth.js}"></script>
+    </th:block>
+
+    <th:block th:fragment="scriptsDashboard">
+        <th:block th:replace="fragments/scripts :: jsContext"></th:block>
+        <th:block th:replace="fragments/scripts :: jsSidebar"></th:block>
+    </th:block>
+
+    <th:block th:fragment="scriptsAuth">
+        <th:block th:replace="fragments/scripts :: jsContext"></th:block>
+        <th:block th:replace="fragments/scripts :: jsAuth"></th:block>
+    </th:block>
+
+</th:block>

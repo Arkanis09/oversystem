@@ -14,6 +14,8 @@ public class DashboardController {
 
         if (userDetails != null) {
             model.addAttribute("username", userDetails.getUsername());
+        } else {
+            model.addAttribute("username", "Sin autenticación");
         }
 
         return "dashboard";
