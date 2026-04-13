@@ -36,7 +36,7 @@ public class LoginController {
     public String Register(@ModelAttribute Usuario usuario, Model model) {
 
         try {
-            usuarioService.GuardarUsuario(usuario);
+            usuarioService.guardarUsuario(usuario);
         } catch (IllegalArgumentException e) {
 
             model.addAttribute("UserErrorExists", e.getMessage());

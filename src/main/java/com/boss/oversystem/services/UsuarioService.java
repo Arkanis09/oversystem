@@ -16,9 +16,7 @@ public class UsuarioService {
     @Autowired
     private PasswordEncoder PEncoder;
 
-    // Método crear
-
-    public Usuario GuardarUsuario(Usuario user) {
+    public Usuario guardarUsuario(Usuario user) {
         usuarioRepo.findByUsername(user.getUsername())
                 .ifPresent(usuario -> {
                     throw new IllegalArgumentException("Este nombre de usuario ya está en uso");
