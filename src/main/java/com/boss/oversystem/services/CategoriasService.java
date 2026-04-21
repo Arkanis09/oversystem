@@ -1,6 +1,8 @@
 package com.boss.oversystem.services;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.boss.oversystem.entities.Categorias;
@@ -16,19 +18,19 @@ public class CategoriasService {
 
     }
 
-    public List<Categorias> leer() {
+    public List<Categorias> showCategory() {
 
         return categoriasRepository.findAll();
 
     }
 
-    public Categorias guardar(Categorias categorias) {
+    public Categorias saveCategory(Categorias categorias) {
 
         return categoriasRepository.save(categorias);
     }
 
     @Transactional
-    public Categorias actualizar(Integer id, Categorias categorias) {
+    public Categorias updateCategory(Integer id, Categorias categorias) {
         Categorias categoria = categoriasRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Categoría no encontrada"));
 
@@ -46,7 +48,7 @@ public class CategoriasService {
 
     }
 
-    public void eliminarCategoria(Integer id) {
+    public void deleteCategory(Integer id) {
         if (!categoriasRepository.existsById(id)) {
             // Los throw new illegal pueden usarse facilmente sin concatenarlo en alguna
             // parte

@@ -1,24 +1,20 @@
 package com.boss.oversystem.controllers;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class DashboardController {
-
+    /* el proyecto pasará a ser una api asi que no sé que haré con esto */
     @GetMapping("/dashboard")
-    public String Dashboard(Model model, @AuthenticationPrincipal UserDetails userDetails) {
+    public BodyBuilder Dashboard(@AuthenticationPrincipal UserDetails userDetails) {
 
-        if (userDetails != null) {
-            model.addAttribute("username", userDetails.getUsername());
-        } else {
-            model.addAttribute("username", "Sin autenticación");
-        }
-
-        return "dashboard";
+        return ResponseEntity.ok();
     }
 
 }
